@@ -28,4 +28,10 @@ export default {
   height: 100vh;
   display: table;
 }
+.byobu #element::-webkit-scrollbar {
+  display: none;
+}
+.byobu ::-webkit-scrollbar {
+  display: none;
+}
 </style>
