@@ -1,4 +1,4 @@
-<p align="center"><img src="./doc/logo.jpg" /></p>
+<p align="center"><img src="./doc/logo.png" /></p>
 
 # Vue-Byobu
 > Byōbu (屏風) (lit., "wind wall") are Japanese folding screens made from several joined panels, bearing decorative painting and calligraphy, used to separate interiors and enclose private spaces, among other uses.
@@ -17,4 +17,4 @@ Vue-Byobu is a beautiful, customizable, byobu-inspired, menu designed for VueJS.
 - Vue Router supported.
 
 ## Roadmap
-- Coming soon.
+<p align="center"><img width=65% src="./doc/roadmap.png" /></p>
