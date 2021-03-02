@@ -6,10 +6,24 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "falcon.lee",
-  "license": "GPL",
-  "description": "",
+  "license": "GPL-3.0",
+  "description": "Vue-Byōbu is a beautiful, customizable, byobu-inspired menu designed for VueJS.",
   "devDependencies": {
     "eslint": "^7.21.0",
     "eslint-plugin-vue": "^7.6.0"
-  }
+  },
+  "directories": {
+    "doc": "doc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FalconLee1011/vue-byobu.git"
+  },
+  "keywords": [
+    "vue", "vuejs", "menu", "frontend", "component", "byōbu"
+  ],
+  "bugs": {
+    "url": "https://github.com/FalconLee1011/vue-byobu/issues"
+  },
+  "homepage": "https://github.com/FalconLee1011/vue-byobu#readme"
 }
