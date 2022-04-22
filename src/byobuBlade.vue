@@ -7,9 +7,9 @@
   >
     <div class="byobu-title">{{ item.title }}</div>
     <transition name="fade">
-      <byobuBladeBlockContainer
-        :style="{ transitionDelay: this.isActive ? '0.2s' : '0s' }"
-        v-if="item.subItems && isActive"
+      <ByobuBladeBlockContainer
+        v-if="isActive && item.subItems"
+        :style="{ transitionDelay: transitionDelay }"
         :items="item.subItems"
       />
     </transition>
@@ -17,11 +17,11 @@
 </template>
 
 <script>
-import byobuBladeBlockContainer from "./byobuBladeBlockContainer";
+import ByobuBladeBlockContainer from "./ByobuBladeBlockContainer";
 
 export default {
   components: {
-    byobuBladeBlockContainer,
+    ByobuBladeBlockContainer,
   },
   props: {
     item: {
@@ -37,10 +37,15 @@ export default {
     };
   },
   computed: {
+    transitionDelay() {
+      return this.isActive ? ".2s" : ".0s";
+    },
     bladeStyle() {
+      const BASE_URL =
+        process.env.NODE_ENV === "production" ? process.env.BASE_URL : "/";
       if (this.item.background) {
         if (this.item.background[0] != "#")
-          return `background: url(${this.item.background})`;
+          return `background: linear-gradient(to right, rgba(0, 0, 0, .5) 0%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, .5) 100%), url(${BASE_URL}${this.item.background});`;
         else return `background: ${this.item.background}`;
       }
       return "";
@@ -67,7 +72,9 @@ export default {
   box-sizing: border-box;
   background-size: auto 100% !important;
   background-repeat: no-repeat !important;
-  background-position: left top !important;
+  /* background-position: left top !important; */
+  background-position: center !important;
+  filter: brightness(0.75);
 }
 .blade-block-container {
   display: table;
@@ -81,7 +88,7 @@ export default {
 .byobu .byobu-blade:hover,
 .byobu .byobu-blade.active {
   width: 50%;
-  transition: 0.6s;
+  filter: brightness(1);
 }
 .byobu .byobu-blade > .byobu-title {
   width: 1em;
@@ -92,7 +99,7 @@ export default {
   word-spacing: 10em;
   padding: 0.75rem 0.75rem;
   position: absolute;
-  color: #333;
+  color: #bbbbbb;
 }
 .byobu .byobu-blade:hover > .byobu-title,
 .byobu .byobu-blade.active > .byobu-title {

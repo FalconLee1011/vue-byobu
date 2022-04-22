@@ -1,15 +1,14 @@
 <template>
   <div class="byobu">
-    <byobuBlade v-for="(item, idx) in items" :key="idx" :item="item" />
+    <ByobuBlade v-for="(item, idx) in items" :key="idx" :item="item" />
   </div>
 </template>
 
 <script>
-import byobuBlade from "./byobuBlade";
+import ByobuBlade from "./ByobuBlade";
 
 export default {
-  name: "byobu",
-  components: { byobuBlade },
+  components: { ByobuBlade },
   props: {
     items: {
       type: Array,

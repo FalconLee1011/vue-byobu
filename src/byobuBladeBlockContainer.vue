@@ -4,21 +4,21 @@
       <div
         v-for="(group, index) in groupedItems"
         :key="index"
-        style="display: table-row;"
+        class="blade-row"
       >
-        <byobuBladeBlock :item="group[0]" />
-        <byobuBladeBlock v-if="group[1]" :item="group[1]" />
+        <ByobuBladeBlock :item="group[0]" />
+        <ByobuBladeBlock v-if="group[1]" :item="group[1]" />
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import byobuBladeBlock from "./byobuBladeBlock";
+import ByobuBladeBlock from "./ByobuBladeBlock";
 
 export default {
   components: {
-    byobuBladeBlock,
+    ByobuBladeBlock,
   },
   props: {
     items: {
@@ -52,5 +52,9 @@ export default {
   border-spacing: 1rem;
   margin: 0 auto;
   padding-bottom: 1rem;
+}
+.blade-row {
+  display: table-row;
+  text-align: center;
 }
 </style>

@@ -1,3 +1,6 @@
-import byobu from './byobu.vue';
+import byobu from './Byobu.vue';
+import byobuBlade from './ByobuBlade.vue';
+import byobuBladeBlock from './ByobuBladeBlock.vue';
+import byobuBladeBlockContainer from './ByobuBladeBlockContainer.vue';
 
-export default { byobu };
+export { byobu, byobuBlade, byobuBladeBlock, byobuBladeBlockContainer };
