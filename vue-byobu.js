@@ -1,12 +1,7 @@
 import { byobu, byobuBlade, byobuBladeBlock, byobuBladeBlockContainer } from './src';
 
 const vueByobu = {
-  install(Vue, ){
-    Vue.mixin({
-      created() {
-        console.log("Byobu Mixin");
-      },
-    });
+  install(Vue){
     Vue.component('byobu', byobu)
     Vue.component('byobuBlade', byobuBlade)
     Vue.component('byobuBladeBlock', byobuBladeBlock)
